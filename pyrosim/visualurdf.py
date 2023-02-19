@@ -1,16 +1,25 @@
 from pyrosim.material import MATERIAL
+from pyrosim.material_green import MATERIAL_GREEN
+from pyrosim.material_blue import MATERIAL_BLUE
 
 from pyrosim.commonFunctions import Save_Whitespace
 
 class VISUAL_URDF: 
 
-    def __init__(self,origin,geometry):
+    def __init__(self,origin,geometry,materialColor):
 
         self.origin = origin
 
         self.geometry = geometry 
 
         self.material = MATERIAL()
+
+        if materialColor == "green":
+            self.material = MATERIAL_GREEN()
+        elif materialColor == "blue":
+            self.material = MATERIAL_BLUE()
+        else:
+            self.material = MATERIAL()
 
         self.depth = 2
 

@@ -36,6 +36,13 @@ class SOLUTION:
         self.randSensors = random.sample(range(0,c.numLinks), c.numSensorNeurons)
         self.randSensors.sort()
 
+        self.myColor = []
+        for ind in range(0,c.numLinks):
+            if ind in self.randSensors:
+                self.myColor.append("green")
+            else:
+                self.myColor.append("blue")
+
     def Evaluate(self, directOrGUI):
         # pass
         self.Create_Body()
@@ -102,7 +109,7 @@ class SOLUTION:
         # for ind in range(0,2):
         ind = 0
         self.linkNames.append("Body"+str(ind))
-        pyrosim.Send_Cube(name=self.linkNames[ind], pos = [0, 0, self.z[0]/2], size = [self.x[ind], self.y[ind], self.z[ind]])
+        pyrosim.Send_Cube(name=self.linkNames[ind], pos = [0, 0, self.z[0]/2], size = [self.x[ind], self.y[ind], self.z[ind]], materialColor=self.myColor[ind])
 
         ind = 1
         self.linkNames.append("Body"+str(ind))
@@ -110,7 +117,7 @@ class SOLUTION:
         pyrosim.Send_Joint( name =  self.jointNames[ind-1], parent= "Body"+str(ind-1), child = "Body"+str(ind), \
             type = "revolute", position = [self.x[0]/2, 0, self.z[0]/2], jointAxis="0 1 0")
 
-        pyrosim.Send_Cube(name=self.linkNames[ind], pos = [self.x[1]/2, 0, 0], size = [self.x[ind], self.y[ind], self.z[ind]])
+        pyrosim.Send_Cube(name=self.linkNames[ind], pos = [self.x[1]/2, 0, 0], size = [self.x[ind], self.y[ind], self.z[ind]], materialColor=self.myColor[ind])
 
         for ind in range(2, c.numLinks):
             self.linkNames.append("Body"+str(ind))
@@ -119,14 +126,14 @@ class SOLUTION:
             pyrosim.Send_Joint( name = self.jointNames[ind-1], parent= "Body"+str(ind-1), child = "Body"+str(ind), \
                 type = "revolute", position = [self.x[ind-1], 0, 0], jointAxis="0 1 0")
 
-            pyrosim.Send_Cube(name=self.linkNames[ind], pos = [self.x[ind]/2, 0, 0], size = [self.x[ind], self.y[ind], self.z[ind]])
+            pyrosim.Send_Cube(name=self.linkNames[ind], pos = [self.x[ind]/2, 0, 0], size = [self.x[ind], self.y[ind], self.z[ind]], materialColor=self.myColor[ind])
            
 
         print(self.linkNames)
         print(self.jointNames)
-        print(self.x)
-        print(self.y)
-        print(self.z)
+        # print(self.x)
+        # print(self.y)
+        # print(self.z)
         pyrosim.End()
 
     def Create_Brain(self):

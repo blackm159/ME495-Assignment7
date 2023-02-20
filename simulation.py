@@ -13,6 +13,7 @@ class SIMULATION:
 
         if (directOrGUI == "GUI"):
             self.physicsClient = p.connect(p.GUI)
+            p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
             self.timeSleep = 0.005 #0.0075
         else: 
             self.physicsClient = p.connect(p.DIRECT)

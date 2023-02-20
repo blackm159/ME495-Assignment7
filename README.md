@@ -19,7 +19,7 @@ This figure shows how torso vertebrae are grown and include an outward leg on 0 
 
 This figure shows how leg links are grown outward (+/-y direction) and downward (-z direction).  Quantity, growth direction, and axis of rotation are chosen randomly for each link.
 
-[Video example including several creatures](www.google.com) 
+[Video example including several creatures](https://youtu.be/tTy0SyG3VDs) 
 
 
  

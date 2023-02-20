@@ -30,9 +30,25 @@ seed = random.randint(0,100)
 
 random.seed(seed)
 
-numLinks = random.randint(3,10)
+numLinks = random.randint(3,5)
 
-numSensorNeurons = random.randint(1,numLinks)
-numMotorNeurons = numLinks - 1
+# arr2 = [[0 for col in range(5)] for row in range(10)]
+# numSubLinks = [[0 for col in range(2)] for row in range(numLinks)]
+totalNumLinks = 0#numLinks
+numSubLinks = np.zeros(shape=(numLinks,2), dtype="object")
+locTorso = []
+for row in range(1,numLinks+1):
+    locTorso.append(totalNumLinks)
+    totalNumLinks = totalNumLinks + 1
+    for col in range(1,2+1):
+        numSubLinks[row-1,col-1] = random.randint(0,4)
+        totalNumLinks = totalNumLinks + numSubLinks[row-1,col-1]
+
+# print(numSubLinks)
+# print(totalNumLinks)
+# print(locTorso)
+
+numSensorNeurons = random.randint(3,totalNumLinks)
+numMotorNeurons = totalNumLinks - 1
 
 motorJointRange = 0.3 #this does something with angle values

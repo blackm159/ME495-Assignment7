@@ -7,11 +7,15 @@
 - Joints are centered on the face of attachment.  Each joint has a randomized axis of rotation.  Each joint is motorized.
 - A random number of links between 3 and the total number of links are sensorized.  These links are represented with green.  Links without sensors are blue.
 
-<img src="./TorsoFigure.jpg" width="40%" height="40%"/>
+<p align="center">
+    <img src="./TorsoFigure.jpg" width="40%" height="40%"/>
+</p>
 
 This figure shows how torso vertebrae are grown and include an outward leg on 0 to 2 side faces.  Starting at the origin, a random number of vertebrae are grown in the +x direction.
 
-<img src="./LegFigure.jpg" width="45%" height="45%"/>
+<p align="center">
+    <img src="./LegFigure.jpg" width="45%" height="45%"/>
+</p>
 
 This figure shows how leg links are grown outward (+/-y direction) and downward (-z direction).  Quantity, growth direction, and axis of rotation are chosen randomly for each link.
 

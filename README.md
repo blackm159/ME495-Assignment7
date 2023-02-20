@@ -1,8 +1,8 @@
-# ME495-Assignment6
+# ME495-Assignment7
  
 ## Information
 #### The goal of this assignment is to grow a random chain of motorized joints with a random number of sensor links
-#### Link to video example: https://youtu.be/P_x4gbmoOFs
+#### Link to video example: 
 ####  
 
 ## How to run

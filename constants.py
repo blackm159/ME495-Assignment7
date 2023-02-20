@@ -30,7 +30,7 @@ seed = random.randint(0,100)
 
 random.seed(seed)
 
-numLinks = random.randint(3,5)
+numLinks = random.randint(1,5)
 
 # arr2 = [[0 for col in range(5)] for row in range(10)]
 # numSubLinks = [[0 for col in range(2)] for row in range(numLinks)]
